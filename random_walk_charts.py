@@ -13,10 +13,9 @@ high_price_deviation = 0  # deviation from close price
 low_price_deviation = 0  # deviation from close price
 number_of_days = 0
 
-# TODO: generic function for gathering user input
 while True:
     try:
-        open_price = float(input("Enter starting price of the stock: "))
+        open_price = float(input("Enter starting price of the stock (e.g. 100): "))
     except ValueError or open_price < 0:
         print("This is not a valid starting price, it must be a positive number.")
     else:
@@ -24,27 +23,27 @@ while True:
 
 while True:
     try:
-        close_price_deviation = float(input("Enter maximum deviation of the close price from the open price in "
-                                            "percentile: "))
-    except ValueError or close_price_deviation < 0:
+        close_price_deviation = float(input("Enter maximum deviation of the close price from the open price "
+                                            "(e.g. 0.02): "))
+    except ValueError or close_price_deviation < 0 or close_price_deviation > 1:
         print("This is not a valid percentile, it must be a positive number.")
     else:
         break
 
 while True:
     try:
-        high_price_deviation = float(input("Enter maximum deviation of the high price from the close price in "
-                                           "percentile: "))
-    except ValueError or high_price_deviation < 0:
-        print("This is not a valid percentile, it must be a positive number.")
+        high_price_deviation = float(input("Enter maximum deviation of the high price from the close price "
+                                           "(e.g. 0.02): "))
+    except ValueError or high_price_deviation < 0 or high_price_deviation > 1:
+        print("This is not a valid percentile, it must be a positive number between 0 and 1.")
     else:
         break
 
 while True:
     try:
-        low_price_deviation = float(input("Enter maximum deviation of the low price from the close price in "
-                                          "percentile: "))
-    except ValueError or low_price_deviation < 0:
+        low_price_deviation = float(input("Enter maximum deviation of the low price from the close price "
+                                          "(e.g. 0.02): "))
+    except ValueError or low_price_deviation < 0 or low_price_deviation > 1:
         print("This is not a valid percentile, it must be a positive number.")
     else:
         break
@@ -52,7 +51,7 @@ while True:
 while True:
     try:
         random_seed = int(input("Enter a number to be used as the seed for the random number generator"
-                                ": "))
+                                "(e.g. 5): "))
     except ValueError or random_seed < 0:
         print("This is not a valid percentile, it must be a positive number.")
     else:
@@ -61,13 +60,11 @@ while True:
 while True:
     try:
         number_of_days = int(input("Enter how many days the chart will consist of"
-                                   ": "))
+                                   "(e.g. 100): "))
     except ValueError or number_of_days < 0:
         print("This is not a valid number.")
     else:
         break
-
-# TODO: being able to use other than uniform distributions?
 
 print("You have configured the random walk chart as follows: \n"
       f"Starting price: {open_price}\n"
@@ -103,5 +100,5 @@ chart_data = pd.DataFrame(index=pd.to_datetime(fictionary_date_list),
                                 'High': high_price_list,
                                 'Low': low_price_list,
                                 'Close': close_price_list})
-print(chart_data)
-mpf.plot(chart_data)
+
+mpf.plot(chart_data, type='candle', title='Your random walk chart')
