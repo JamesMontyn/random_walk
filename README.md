@@ -6,7 +6,7 @@ With this he tried to show that the price movement in the stock market is highly
 
 With this program I take Malkiel's experiment further. This program will generate an artificial stock chart based on
 choosing a closing, high, and low price of each day within a configurable maximum deviation uniformly. Say, I have an
-opening price of today of 100, and I configured my maximum deviation of the closing prices to be 0.02 or 2% of the
+opening price of today of 100, and I configured my maximum deviation of the closing prices to be 0.02 (or 2%) of the
 opening price, then my range of prices to choose from is \[98,102\]. The program will uniformly choose a price from this
 range to generate the closing price of today. Eventually, we will have the data of the artificial stock chart, and we
 can plot it as a bar chart. You will be surprised how much it will look just like an actual stock chart and will make
