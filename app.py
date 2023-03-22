@@ -1,7 +1,24 @@
+#!/usr/bin/env python
+"""Random walk generator app.
+
+This is the main file of the program, providing the interface for using the RandomWalk class.
+"""
+
 from random_walk import RandomWalk
 
+__author__ = "James Montyn"
+__version__ = "1.0"
+__maintainer__ = "James Montyn"
+__email__ = "JamesMontyn@gmail.com"
+__status__ = "Production"
 
-def start_price_menu():
+
+def start_price_menu() -> float:
+    """Menu for getting the start price from user
+
+    :return: float
+        the start price
+    """
     start_price = 0
     while True:
         try:
@@ -12,7 +29,12 @@ def start_price_menu():
             return start_price
 
 
-def close_price_deviation_menu():
+def close_price_deviation_menu() -> float:
+    """Menu for getting the close price deviation from user
+
+    :return: float
+        the closing price deviation
+    """
     close_price_deviation = 0
     while True:
         try:
@@ -24,7 +46,12 @@ def close_price_deviation_menu():
             return close_price_deviation
 
 
-def high_price_deviation_menu():
+def high_price_deviation_menu() -> float:
+    """Menu for getting the high price deviation from user
+
+    :return: float
+        the high price deviation
+    """
     high_price_deviation = 0
     while True:
         try:
@@ -36,7 +63,12 @@ def high_price_deviation_menu():
             return high_price_deviation
 
 
-def low_price_deviation_menu():
+def low_price_deviation_menu() -> float:
+    """Menu for getting the low price deviation from user
+
+    :return: float
+        the low price deviation
+    """
     low_price_deviation = 0
     while True:
         try:
@@ -48,7 +80,12 @@ def low_price_deviation_menu():
             return low_price_deviation
 
 
-def random_seed_menu():
+def random_seed_menu() -> int:
+    """Menu for getting the seed from user
+
+    :return: int
+        the seed
+    """
     random_seed = 0
     while True:
         try:
@@ -60,7 +97,12 @@ def random_seed_menu():
             return random_seed
 
 
-def number_of_days_menu():
+def number_of_days_menu() -> int:
+    """Menu for getting the number of days from user
+
+    :return: int
+        the number of days
+    """
     number_of_days = 0
     while True:
         try:
@@ -72,7 +114,12 @@ def number_of_days_menu():
             return number_of_days
 
 
-def configure_random_walk_menu(random_walk: RandomWalk):
+def configure_random_walk_menu(random_walk: RandomWalk) -> None:
+    """Menu for configuring the random walk variables
+
+    :param random_walk: RandomWalk object
+    :return: None
+    """
     while True:
         input_number = 0
         try:
@@ -111,7 +158,11 @@ def configure_random_walk_menu(random_walk: RandomWalk):
                 break
 
 
-def filename_csv_menu():
+def filename_csv_menu() -> str:
+    """Menu for getting the filename from user
+
+    :return: str
+    """
     while True:
         filename = input("Enter a filename to export the random walk to (e.g. \'filename.csv\': ")
         print(filename, filename[-4:])
@@ -122,6 +173,12 @@ def filename_csv_menu():
 
 
 def main():
+    """Main, contains the RandomWalk instance and the main menu of the program
+
+    :return: None
+    """
+    print("--------===== Random Walk Generator =====--------\n"
+          "Made by James Montyn at github.com/JamesMontyn")
     random_walk = RandomWalk()
     while True:
         input_number = 0
@@ -152,7 +209,4 @@ def main():
 
 
 if __name__ == "__main__":
-    print("--------===== Random Walk Generator =====--------\n"
-          "Made by James Montyn at github.com/JamesMontyn\n"
-          "\n")
     main()
