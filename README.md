@@ -13,12 +13,13 @@ can plot it as a bar chart. You will be surprised how much it will look just lik
 you think twice about your conception on technical analysis and the overall price movement of stock markets.
 
 # How it works
-The program consists of a main menu and submenu's, which act as the interface to the `RandomWalk` class that implements
+The program consists of a main menu and submenu's, which act as the interface to the *RandomWalk* class that implements
 the random walk generating. The menus are used to configure the generator, plot the random walk, generate a new
 random walk with the same configuration and to plot the random walk to a csv file. When plotting your generated random
 walk a window will pop up with the bar chart of the random walk.
 
 # Running the program
-To run the program you will need Python3 and the modules in `requirements.txt`.
+To run the program you will need Python3 and the modules in *requirements.txt*.
 If you have everything installed you can simply execute the following command to run the program:
-```python3 app.py```
+
+`python3 app.py`
