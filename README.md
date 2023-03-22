@@ -10,7 +10,7 @@ opening price of today of 100, and I configured my maximum deviation of the clos
 opening price, then my range of prices to choose from is \[98,102\]. The program will uniformly choose a price from this
 range to generate the closing price of today. Eventually, we will have the data of the artificial stock chart, and we
 can plot it as a bar chart. You will be surprised how much it will look just like an actual stock chart and will make
-you think twice about your conception on technical analysis and the overall price movement of stock markets.
+you think twice about technical analysis and the overall price movement of stock markets.
 
 # How it works
 The program consists of a main menu and submenu's, which act as the interface to the *RandomWalk* class that implements
